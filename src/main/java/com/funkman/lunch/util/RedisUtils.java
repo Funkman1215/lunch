@@ -21,7 +21,7 @@ public class RedisUtils {
     private final static Logger LOGGER = LoggerFactory.getLogger(HttpAspect.class);
 
     @Autowired
-    RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     /**
      * 指定缓存失效时间

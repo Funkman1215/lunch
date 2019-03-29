@@ -7,6 +7,7 @@ import com.funkman.lunch.entity.Lunch;
 import com.funkman.lunch.entity.Restaurant;
 import com.funkman.lunch.entity.User;
 import com.funkman.lunch.resultEnum.LevelEnum;
+import com.funkman.lunch.util.RedisUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,9 @@ public class LunchApplicationTests {
 
     @Autowired
     private LunchDao lunchDao;
+
+    @Autowired
+    private RedisUtils redisUtils;
 
     //jpa
     @Test
@@ -68,6 +72,11 @@ public class LunchApplicationTests {
             }
             System.out.println("--------------");
         }
+
+    }
+
+
+    public void addTask() {
 
     }
 }

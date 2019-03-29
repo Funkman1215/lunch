@@ -19,7 +19,7 @@ public class HttpAspect {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(HttpAspect.class);
 
-    @Pointcut("execution(public * com.funkman.lunch.controller.*(..))")
+    @Pointcut("execution(public * com.funkman.lunch.controller.LunchController.*(..))")
     public void setLogger() {
 
     }
