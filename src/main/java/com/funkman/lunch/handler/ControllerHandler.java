@@ -2,6 +2,7 @@ package com.funkman.lunch.handler;
 
 import com.funkman.lunch.entity.Error;
 import com.funkman.lunch.entity.Result;
+import com.funkman.lunch.execption.RedisException;
 import com.funkman.lunch.execption.UserException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,6 +16,9 @@ public class ControllerHandler {
     public Result errorHandler(Exception e) {
         if (e instanceof UserException) {
             return Result.error(new Error(100, "用户异常"), null);
+        }
+        if (e instanceof RedisException) {
+            return Result.error(new Error(((RedisException) e).getCode(), e.getMessage()), null);
         }
         return Result.error(new Error(200, "非用户异常"), null);
     }

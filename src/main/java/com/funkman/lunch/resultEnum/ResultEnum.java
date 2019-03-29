@@ -1,7 +1,8 @@
 package com.funkman.lunch.resultEnum;
 
 public enum ResultEnum {
-    ONE(1, "嘿嘿嘿"),
+    EMPTY_ARGS(800, "参数为空"),
+    PLURA_ARG(801,"有参数为负数"),
     ;
 
     private Integer code;
